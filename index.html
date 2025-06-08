@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced MySite</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+        }
+
+        .top-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 40px 0; /* Added padding */
+        }
+        .top-section img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px; /* Slightly rounded corners */
+        }
+        .top-section h2 {
+            font-weight: 700;
+            color: #0056b3;
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            background: url('https://via.placeholder.com/1500x500/007bff/ffffff?text=Your+Amazing+Hero+Image') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .hero-section::before { /* Overlay for better text readability */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        /* Features/Services Section */
+        .features-section .card {
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: none;
+        }
+        .features-section .card:hover {
+            transform: translateY(-5px);
+        }
+        .features-section .card-header {
+            background-color: #007bff;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+        }
+        .features-section .card-body i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .features-section h3 {
+            font-weight: 600;
+            color: #0056b3;
+        }
+
+        /* About Us Section */
+        .about-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 50px;
+        }
+        .about-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #0056b3;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 60px 0;
+            margin-bottom: 50px;
+        }
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #0056b3;
+        }
+        .contact-section .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40; /* Darker footer */
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+        footer p {
+            margin-bottom: 0;
+        }
+
+        /* Back to Top Button */
+        #backToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Place at the bottom */
+            right: 30px; /* Place at the right */
+            z-index: 99; /* Make sure it's on top */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: #007bff; /* Set a background color */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 18px; /* Increase font size */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+        }
+        #backToTopBtn:hover {
+            background-color: #0056b3; /* Darker background on hover */
+        }
+
+        /* Responsive adjustments for top-section */
+        @media (max-width: 768px) {
+            .top-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .top-section img {
+                margin-bottom: 20px;
+            }
+            .top-section .ms-4 {
+                margin-left: 0 !important; /* Override Bootstrap's margin for smaller screens */
+            }
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#top">MySite</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#top">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="top" class="hero-section">
+        <div class="container">
+            <h1>Your Journey Starts Here</h1>
+            <p>We provide innovative solutions to help your business grow. Explore our services!</p>
+            <a href="#features" class="btn btn-primary btn-lg">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </section>
+
+    <div class="container top-section">
+        <div>
+            <img src="https://via.placeholder.com/200/cccccc/ffffff?text=Our+Vision" alt="Our Vision Image">
+        </div>
+        <div class="ms-md-4 mt-4 mt-md-0">
+            <h2>Welcome to MySite!</h2>
+            <p>We are dedicated to providing the best services and solutions for our clients. Our mission is to innovate and deliver excellence in every project. Learn more about how we can help you achieve your goals.</p>
+            <a href="#about" class="btn btn-outline-primary">Read More</a>
+        </div>
+    </div>
+
+    <section id="features" class="container features-section text-center py-5">
+        <h2 class="mb-5">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-desktop mb-3"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Web Development</h3>
+                        <p class="card-text">Crafting responsive and modern websites tailored to your needs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-mobile-alt mb-3"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Mobile Apps</h3>
+                        <p class="card-text">Building intuitive and high-performance mobile applications for all platforms.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-cloud mb-3"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Cloud Solutions</h3>
+                        <p class="card-text">Scalable and secure cloud infrastructure to power your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="mb-4">About Us</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=About+Our+Company" class="img-fluid rounded shadow" alt="About Us Image">
+                </div>
+                <div class="col-lg-6">
+                    <h3>Our Story & Mission</h3>
+                    <p>MySite was founded in 2020 with a vision to revolutionize the digital landscape. We believe in harnessing the power of technology to create impactful solutions for businesses of all sizes.</p>
+                    <p>Our mission is to empower our clients with cutting-edge digital tools and strategies, fostering growth and innovation. We are a team of passionate experts dedicated to delivering exceptional results and building lasting relationships.</p>
+                    <p>From initial concept to deployment and beyond, we are committed to providing comprehensive support and expertise.</p>
+                    <a href="#contact" class="btn btn-primary mt-3">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="text-center mb-4">Have a question or want to start a project? Send us a message!</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Subject of your message">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MySite. All rights reserved.</p>
+            <div class="social-icons mt-2">
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("backToTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
