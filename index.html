@@ -11,178 +11,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-        }
-
-        .top-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 20px;
-            padding: 40px 0; /* Added padding */
-        }
-        .top-section img {
-            max-width: 150px;
-            height: auto;
-            border-radius: 8px; /* Slightly rounded corners */
-        }
-        .top-section h2 {
-            font-weight: 700;
-            color: #0056b3;
-        }
-
-        /* Hero Section Styling */
-        .hero-section {
-            background: url('https://via.placeholder.com/1500x500/007bff/ffffff?text=Your+Amazing+Hero+Image') no-repeat center center;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        .hero-section::before { /* Overlay for better text readability */
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-            z-index: 1;
-        }
-        .hero-section .container {
-            position: relative;
-            z-index: 2;
-        }
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .hero-section p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-        }
-
-        /* Features/Services Section */
-        .features-section .card {
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border: none;
-        }
-        .features-section .card:hover {
-            transform: translateY(-5px);
-        }
-        .features-section .card-header {
-            background-color: #007bff;
-            color: white;
-            font-weight: 700;
-            text-align: center;
-        }
-        .features-section .card-body i {
-            font-size: 3rem;
-            color: #007bff;
-            margin-bottom: 15px;
-        }
-        .features-section h3 {
-            font-weight: 600;
-            color: #0056b3;
-        }
-
-        /* About Us Section */
-        .about-section {
-            padding: 60px 0;
-            background-color: #f8f9fa;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 50px;
-        }
-        .about-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 700;
-            color: #0056b3;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 60px 0;
-            margin-bottom: 50px;
-        }
-        .contact-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 700;
-            color: #0056b3;
-        }
-        .contact-section .form-control:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #343a40; /* Darker footer */
-            color: white;
-            text-align: center;
-            padding: 25px 0;
-            margin-top: 50px;
-        }
-        footer p {
-            margin-bottom: 0;
-        }
-
-        /* Back to Top Button */
-        #backToTopBtn {
-            display: none; /* Hidden by default */
-            position: fixed; /* Fixed position */
-            bottom: 20px; /* Place at the bottom */
-            right: 30px; /* Place at the right */
-            z-index: 99; /* Make sure it's on top */
-            border: none; /* Remove borders */
-            outline: none; /* Remove outline */
-            background-color: #007bff; /* Set a background color */
-            color: white; /* Text color */
-            cursor: pointer; /* Add a mouse pointer on hover */
-            padding: 15px; /* Some padding */
-            border-radius: 10px; /* Rounded corners */
-            font-size: 18px; /* Increase font size */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease;
-        }
-        #backToTopBtn:hover {
-            background-color: #0056b3; /* Darker background on hover */
-        }
-
-        /* Responsive adjustments for top-section */
-        @media (max-width: 768px) {
-            .top-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .top-section img {
-                margin-bottom: 20px;
-            }
-            .top-section .ms-4 {
-                margin-left: 0 !important; /* Override Bootstrap's margin for smaller screens */
-            }
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-            .hero-section p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -197,6 +26,7 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#top">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#features">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#other">Other</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -252,6 +82,95 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="other" class="other-section">
+        <div class="container">
+            <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>created_at</th>
+      <th>author_id</th>
+      <th>id</th>
+      <th>edit_history_tweet_ids</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-06-08T09:37:49.000Z</td>
+      <td>1916546429755199488</td>
+      <td>1931646840304488858</td>
+      <td>[1931646840304488858]</td>
+      <td>@echooagent just launched a $50K ZEALY campaign ahead of its TGE! 🧠💰\n\nECHO AI is an AI-powered Telegram mini-app that streamlines hiring, deal flow &amp;amp; investment for Web3 projects—powered by OpenAI, built just for Web3.\n\nJoin early &amp;amp; claim your share! 👉 https://t.co/3WdFvBABK0</td>
+    </tr>
+    <tr>
+      <td>2025-06-08T09:37:00.000Z</td>
+      <td>25407962</td>
+      <td>1931646633634087176</td>
+      <td>[1931646633634087176]</td>
+      <td>"When @PalisadeAI tested various AI models by telling each one that it would be shut down after it completed a series of math problems, OpenAI’s o3 reasoning model fought back by editing the shutdown script in order to stay online."\n\nRead: How far will AI go to defend its own https://t.co/GiSRCnVvqn</td>
+    </tr>
+    <tr>
+      <td>2025-06-08T09:36:50.000Z</td>
+      <td>14863017</td>
+      <td>1931646591045148764</td>
+      <td>[1931646591045148764]</td>
+      <td>@morqon @swyx @ChatGPTapp openai has a serious builder scandal in their future when it turns out bannon was right and they employ him to answer questions that white americans can't answer</td>
+    </tr>
+    <tr>
+      <td>2025-06-08T09:36:28.000Z</td>
+      <td>1916545660104704000</td>
+      <td>1931646500309811472</td>
+      <td>[1931646500309811472]</td>
+      <td>@echooagent just launched a $50K ZEALY campaign ahead of its TGE! 🧠💰\n\nECHO AI is an AI-powered Telegram mini-app that streamlines hiring, deal flow &amp;amp; investment for Web3 projects—powered by OpenAI, built just for Web3.\n\nJoin early &amp;amp; claim your share! 👉 https://t.co/K0fgpB1dQk</td>
+    </tr>
+    <tr>
+      <td>2025-06-08T09:36:23.000Z</td>
+      <td>1763143756386304000</td>
+      <td>1931646478579073470</td>
+      <td>[1931646478579073470]</td>
+      <td>@BrandGrowthOS @VectorShift @OpenAI seems like very interseting profile.</td>
+    </tr>
+    <tr>
+      <td>2025-06-08T09:36:20.000Z</td>
+      <td>1675853698856112130</td>
+      <td>1931646465564115179</td>
+      <td>[1931646465564115179]</td>
+      <td>@echooagent just launched a $50K ZEALY campaign ahead of its TGE! 🧠💰\n\nECHO AI is an AI-powered Telegram mini-app that streamlines hiring, deal flow &amp;amp; investment for Web3 projects—powered by OpenAI, built just for Web3.\n\nJoin early &amp;amp; claim your share! 👉 https://t.co/yUXwEFcZzg</td>
+    </tr>
+    <tr>
+      <td>2025-06-08T09:36:18.000Z</td>
+      <td>149445169</td>
+      <td>1931646457435566122</td>
+      <td>[1931646457435566122]</td>
+      <td>AI detectors kept flagging my content.\n\nSo I got obsessed.\n100+ tests.\n7 different tools.\nOne perfect prompt.\n\n✅ GPTZero\n✅ OpenAI\n✅ Copyleaks\n✅ ZeroGPT\n✅ Grammarly\n✅ https://t.co/aiIrwZBuYy\n✅ Sapling\n\nPassed all of them.\n🧠 Here’s how I built the prompt:\n\n👉 https://t.co/NeRjVRZQhr</td>
+    </tr>
+    <tr>
+      <td>2025-06-08T09:35:11.000Z</td>
+      <td>1916912310360412161</td>
+      <td>1931646178715955587</td>
+      <td>[1931646178715955587]</td>
+      <td>@echooagent just launched a $50K ZEALY campaign ahead of its TGE! 🧠💰\n\nECHO AI is an AI-powered Telegram mini-app that streamlines hiring, deal flow &amp;amp; investment for Web3 projects—powered by OpenAI, built just for Web3.\n\nJoin early &amp;amp; claim your share! 👉 https://t.co/0DfPghuqwW</td>
+    </tr>
+    <tr>
+      <td>2025-06-08T09:34:39.000Z</td>
+      <td>1848602191172354048</td>
+      <td>1931646043390718160</td>
+      <td>[1931646043390718160]</td>
+      <td>@echooagent just launched a $50K ZEALY campaign ahead of its TGE! 🧠💰\n\nECHO AI is an AI-powered Telegram mini-app that streamlines hiring, deal flow &amp;amp; investment for Web3 projects—powered by OpenAI, built just for Web3.\n\nJoin early &amp;amp; claim your share! 👉 https://t.co/6su3vRhJ3I</td>
+    </tr>
+    <tr>
+      <td>2025-06-08T09:33:50.000Z</td>
+      <td>1811465837200756736</td>
+      <td>1931645837823914036</td>
+      <td>[1931645837823914036]</td>
+      <td>@echooagent just launched a $50K ZEALY campaign ahead of its TGE! 🧠💰\n\nECHO AI is an AI-powered Telegram mini-app that streamlines hiring, deal flow &amp;amp; investment for Web3 projects—powered by OpenAI, built just for Web3.\n\nJoin early &amp;amp; claim your share! 👉 https://t.co/kxKC6iIC1G</td>
+    </tr>
+  </tbody>
+</table>
+
         </div>
     </section>
 
